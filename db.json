@@ -1,0 +1,82 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "username": "daniramdani",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "admin"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "nama_kategori": "All Trip"
+    },
+    {
+      "id": 2,
+      "nama_kategori": "Open Trip"
+    },
+    {
+      "id": 3,
+      "nama_kategori": "Private Trip"
+    }
+  ],
+  "trip": [
+    {
+      "id": 1,
+      "title": "Bandung",
+      "image": "https://atourin.obs.ap-southeast-3.myhuaweicloud.com/images/destination/bandung/gedung-sate-profile1639291114.png?x-image-process=image/resize,p_100,limit_1/imageslim",
+      "ratting": 4.5,
+      "jumlah_berangkat": 100,
+      "harga": 800000,
+      "tag": "Open Trip",
+      "category": {
+        "id": 2,
+        "nama_kategori": "Open Trip"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Jakarta",
+      "image": "https://atourin.obs.ap-southeast-3.myhuaweicloud.com/images/destination/bandung/gedung-sate-profile1639291114.png?x-image-process=image/resize,p_100,limit_1/imageslim",
+      "ratting": 4.1,
+      "jumlah_berangkat": 200,
+      "harga": 900000,
+      "tag": "Private Trip",
+      "category": {
+        "id": 3,
+        "nama_kategori": "Private Trip"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Surabaya",
+      "image": "https://atourin.obs.ap-southeast-3.myhuaweicloud.com/images/destination/bandung/gedung-sate-profile1639291114.png?x-image-process=image/resize,p_100,limit_1/imageslim",
+      "ratting": 4.3,
+      "jumlah_berangkat": 400,
+      "harga": 950000,
+      "tag": "Private Trip",
+      "category": {
+        "id": 3,
+        "nama_kategori": "Private Trip"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Malang",
+      "image": "https://atourin.obs.ap-southeast-3.myhuaweicloud.com/images/destination/bandung/gedung-sate-profile1639291114.png?x-image-process=image/resize,p_100,limit_1/imageslim",
+      "ratting": 4.9,
+      "jumlah_berangkat": 900,
+      "harga": 930000,
+      "tag": "Private Trip",
+      "category": {
+        "id": 3,
+        "nama_kategori": "Private Trip"
+      }
+    }
+  ]
+}
