@@ -1,7 +1,19 @@
-let namaElm = document.getElementById("nama_profile");
-namaElm.textContent = "Dani Ramdani";
-
 let url = "http://localhost:3000/";
+
+let namaElm = document.getElementById("nama_profile");
+let walletElm = document.getElementById("wallet");
+let voucherElm = document.getElementById("voucher");
+getUser = async () => {
+  let dataUser = await fetch(url + `user?id=1`);
+  let userCon = await dataUser.json();
+  userCon.forEach((item) => {
+    namaElm.textContent = `${item.username}`;
+    walletElm.textContent = `IDR ${item.wallet}`;
+    voucherElm.textContent = `${item.voucher} voucher`;
+  });
+};
+getUser();
+
 // show menu element
 let categoryElm = document.getElementById("category");
 
@@ -18,7 +30,7 @@ getCategory = async () => {
       let judul = document.getElementById("akuaku");
       judul.textContent = `${item.nama_kategori}`;
       judul.innerHTML = `${item.nama_kategori}`;
-
+      getTrip(item.nama_kategori);
       const menuClassList = document.querySelectorAll(".menu");
       menuClassList.forEach((item) => {
         item.classList.remove("text-red-600");
@@ -35,16 +47,26 @@ getCategory = async () => {
 getCategory();
 
 let tripElm = document.getElementById("trip");
-getTrip = async () => {
+
+getTrip = async (category) => {
   let dataTrip = await fetch(url + `trip`);
   let dataTripConv = await dataTrip.json();
-
-  dataTripConv.forEach((item) => {
+  console.log(dataTripConv);
+  let newData = [];
+  if (category.length != 0) {
+    console.log(category);
+    newData = dataTripConv.filter((item) => item.tag == category);
+  } else {
+    newData = dataTripConv;
+  }
+  tripElm.innerHTML = "";
+  console.log(newData);
+  newData.forEach((item) => {
     const menuTrip = document.createElement("div");
 
     menuTrip.innerHTML = `<div class="flex flex-col rounded-md gap-1 shadow-md">
               <span
-                ><img src="${item.image}" alt="img"
+                ><img src="./img/${item.image}" alt="img"
               /></span>
               <div class="flex flex-col p-5 gap-2">
                 <span class="font-semibold text-xl">${item.title}</span>
@@ -68,11 +90,3 @@ getTrip = async () => {
 };
 
 getTrip();
-
-getOT = async () => {
-  let link = "trip?category.id=2";
-  let endpOT = await fetch(url + link);
-  let endOTconv = await endpOT.json();
-  // console.log(endOTconv);
-};
-getOT();

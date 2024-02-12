@@ -18,7 +18,6 @@
         <div class="flex justify-between items-center">
           <div class="flex flex-col">
             <span>Hallo, <span id="nama_profile"></span></span>
-            <!-- <span>Ayo Jalan jalan</span> -->
           </div>
           <div class="flex items-center gap-4">
             <span><i class="fa-regular fa-bell fa-xl"></i></span>
@@ -33,7 +32,7 @@
           >
             <div>
               <div>Wallet</div>
-              <div>IDR 20.000</div>
+              <div id="wallet">IDR 20.000</div>
             </div>
             <div>
               <span><i class="fa-solid fa-money-check-dollar fa-2xl"></i></span>
@@ -44,7 +43,7 @@
           >
             <div>
               <div>Voucher</div>
-              <div>6 Voucher</div>
+              <div id="voucher">6 Voucher</div>
             </div>
             <div>
               <span><i class="fa-solid fa-ticket fa-2xl"></i></span>
@@ -60,14 +59,19 @@
           id="search"
         />
         <span class="absolute top-3 right-5">
-          <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+          <button>
+            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+          </button>
         </span>
       </section>
       <section>
         <div
           class="bg-slate-100 rounded-lg p-3 flex flex-row gap-5 overflow-auto no-scrollbar whitespace-nowrap"
           id="category"
-        ></div>
+        >
+          <!-- <div class="cursor-pointer menu" id="private_trip">Private Trip</div>
+          <div class="cursor-pointer menu" id="open_trip">Open Trip</div> -->
+        </div>
       </section>
       <section>
         <div class="flex flex-col gap-5">
