@@ -4,7 +4,7 @@ let namaElm = document.getElementById("nama_profile");
 let walletElm = document.getElementById("wallet");
 let voucherElm = document.getElementById("voucher");
 getUser = async () => {
-  let dataUser = await fetch(url + `user?id=1`);
+  let dataUser = await fetch(url + `user?id=2`);
   let userCon = await dataUser.json();
   userCon.forEach((item) => {
     namaElm.textContent = `${item.username}`;
@@ -51,16 +51,19 @@ let tripElm = document.getElementById("trip");
 getTrip = async (category) => {
   let dataTrip = await fetch(url + `trip`);
   let dataTripConv = await dataTrip.json();
-  console.log(dataTripConv);
   let newData = [];
-  if (category.length != 0) {
-    console.log(category);
+
+  if (category == null) {
+    newData = dataTripConv;
+  } else if (category == "All Trip") {
+    newData = dataTripConv;
+  } else if (category.length != 0) {
     newData = dataTripConv.filter((item) => item.tag == category);
   } else {
     newData = dataTripConv;
   }
+
   tripElm.innerHTML = "";
-  console.log(newData);
   newData.forEach((item) => {
     const menuTrip = document.createElement("div");
 
@@ -88,5 +91,4 @@ getTrip = async (category) => {
     tripElm.appendChild(menuTrip);
   });
 };
-
 getTrip();

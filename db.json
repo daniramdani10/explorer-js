@@ -11,8 +11,8 @@
       "id": 2,
       "username": "admin",
       "password": "admin",
-      "wallet": 20000,
-      "voucher": 6
+      "wallet": 30000,
+      "voucher": 2
     }
   ],
   "category": [
